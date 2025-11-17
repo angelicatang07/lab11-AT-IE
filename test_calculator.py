@@ -1,7 +1,7 @@
 # https://github.com/angelicatang07/lab11-AT-IE.git
 # Partner 1: Angelica Tang
 # Partner 2: Isabel Espinoza
-
+import math
 import unittest
 from calculator import *
 
@@ -20,20 +20,20 @@ class TestCalculator(unittest.TestCase):
 
     ######## Partner 1
     def test_multiply(self): # 3 assertions
-        self.assertEqual(multiply(-1, 5), -5)
-        self.assertEqual(multiply(3, 2), 6)
-        self.assertEqual(multiply(0, 3), 0)
+        self.assertEqual(mul(-1, 5), -5)
+        self.assertEqual(mul(3, 2), 6)
+        self.assertEqual(mul(0, 3), 0)
 
     def test_divide(self): # 3 assertions
-        self.assertEqual(divide(6, 2), 3)
-        self.assertEqual(divide(10, 10), 1)
-        self.assertEqual(divide(-10, 2), -5)
+        self.assertEqual(div(6, 2), 3)
+        self.assertEqual(div(10, 10), 1)
+        self.assertEqual(div(-10, 2), -5)
     # ##########################
 
     ######## Partner 2
     def test_divide_by_zero(self): # 1 assertion
         with self.assertRaises(ZeroDivisionError):
-            divide(0, 5)
+            div(0, 5)
 
     def test_logarithm(self): # 3 assertions
         self.assertAlmostEqual(logarithm(2,8), 3)
@@ -53,14 +53,14 @@ class TestCalculator(unittest.TestCase):
     def test_hypotenuse(self): # 3 assertions
         self.assertAlmostEqual(hypotenuse(3, 4), 5)
         self.assertAlmostEqual(hypotenuse(6, 8), 10)
-        self.assertAlmostEqual(hypotenuse(6, 7), 9.2)
+        self.assertAlmostEqual(hypotenuse(6, 7), math.sqrt(85))
 
     def test_sqrt(self): # 3 assertions
         # Test for invalid argument, example:
         with self.assertRaises(ValueError):
            square_root(-1)
         self.assertEqual(square_root(4), 2)
-        self.assertAlmostEqual(square_root(3), 1.73)
+        self.assertAlmostEqual(square_root(3), math.sqrt(3))
 
     ##########################
 
