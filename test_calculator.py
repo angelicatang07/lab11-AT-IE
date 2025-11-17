@@ -2,7 +2,6 @@
 # Partner 1: Angelica Tang
 # Partner 2: Isabel Espinoza
 
-import math
 import unittest
 from calculator import *
 
